@@ -1,0 +1,58 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": "./"
+  },
+  "env": { "browser": true },
+  "plugins": ["prettier", "@typescript-eslint", "import"],
+  "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+  "settings": { "import/resolver": { "typescript": {} } },
+  "ignorePatterns": ["vite.config.ts", "vite-env.d.ts"],
+  "rules": {
+    "strict": 0,
+    "no-console": "warn",
+    "no-plusplus": ["warn", { "allowForLoopAfterthoughts": true }],
+    "no-unused-expressions": "off",
+    "no-undef": "error",
+    "lines-between-class-members": [
+      "warn",
+      "always",
+      { "exceptAfterSingleLine": true }
+    ],
+    "prefer-destructuring": [
+      "error",
+      {
+        "AssignmentExpression": { "array": false }
+      }
+    ],
+    "prefer-const": ["warn"],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "test-utils",
+            "group": "external"
+          }
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "js": "never", "ts": "never" }
+    ],
+    "import/prefer-default-export": "off",
+    "prettier/prettier": "warn",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/consistent-type-imports": ["warn"]
+  }
+}
