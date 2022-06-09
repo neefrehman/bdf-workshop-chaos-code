@@ -1,15 +1,14 @@
 import pallettes from "nice-color-palettes";
 
 import { type Canvas2DSetupFn, render2DCanvasSketch } from "renderers/canvas2D";
-import type { BezierCurvePoints } from "utils/canvas2d";
 import {
+  type BezierCurvePoints,
   bezierCurveBetween,
   clearBackgroundWithColor,
-  generateTextPath,
 } from "utils/canvas2d";
 import { getDistance, type Vector } from "utils/math";
 import { getShortestViewportDimension } from "utils/math";
-import { inRange, pick, inGaussian } from "utils/random";
+import { pick } from "utils/random";
 
 class NoisePoint {
   ctx: CanvasRenderingContext2D;
@@ -21,15 +20,16 @@ class NoisePoint {
 
   constructor(ctx: CanvasRenderingContext2D) {
     this.ctx = ctx;
-    this.xOff = inRange(200);
-    this.yOff = inRange(400, 600);
-    this.v = inGaussian(0.005, 0.001);
+    this.xOff = 0;
+    this.yOff = 0;
+    this.v = 0.005;
   }
 
   move = (): void => {
-    // We'll be completing this in the workshop
     this.xOff += this.v;
     this.yOff += this.v;
+    this.x = 1;
+    this.y = 1;
   };
 
   drawPoint = (): void => {
@@ -47,10 +47,14 @@ class NoisePoint {
     return nearestPoints;
   };
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore, we'll complete this function in the workshop
   getBezierCurvePoints = (nearestPoint: Vector<2>): BezierCurvePoints => {
     const [x, y] = nearestPoint;
+    return [
+      [this.x, this.y],
+      [this.x, this.y],
+      [x, y],
+      [x, y],
+    ];
   };
 
   drawBezierCurve = (nearestPoint: Vector<2>, colour = "white"): void => {
@@ -73,7 +77,6 @@ const sketch: Canvas2DSetupFn = ({ ctx, width, height }) => {
   ctx.font = `${SCALE}px Helvetica`;
   ctx.textBaseline = "middle";
   ctx.textAlign = "center";
-  const textPath = generateTextPath(ctx, WORD, width / 2, height / 2);
 
   return ({}) => {
     clearBackgroundWithColor(ctx, backgroundColor);
