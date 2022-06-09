@@ -1,5 +1,7 @@
 import type { Vector } from "utils/math";
 
+export type BezierCurvePoints = [Vector<2>, Vector<2>, Vector<2>, Vector<2>];
+
 /**
  * Draws a bezier curve between 2 points
  *

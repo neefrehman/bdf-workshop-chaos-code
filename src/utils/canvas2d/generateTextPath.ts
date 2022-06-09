@@ -28,14 +28,14 @@ export const generateTextPath = (
     gap?: number;
     /** how big a reduction to make in the sampled point array */
     decimation?: number;
-  }
+  } = {}
 ): Vector<2>[] => {
-  const { outline = true } = options;
+  const { outline = true, ...restOptions } = options;
 
   const points = sampleCanvasPixels(
     ctx,
     () => (outline ? ctx.strokeText(text, x, y) : ctx.fillText(text, x, y)),
-    options
+    restOptions
   );
 
   return points;

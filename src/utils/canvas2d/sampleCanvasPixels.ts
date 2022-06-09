@@ -23,7 +23,7 @@ export const sampleCanvasPixels = (
     decimation?: number;
   } = {}
 ): Vector<2>[] => {
-  const { gap = 1, decimation = 20 } = options;
+  const { gap = 1, decimation = 40 } = options;
 
   const points: Vector<2>[] = [];
 
