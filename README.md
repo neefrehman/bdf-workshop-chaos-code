@@ -7,7 +7,7 @@ This repository contains the starter code for a workshop at [Birmingham Design F
 
 ## Prerequisites
 
-1. A Text Editor installed. I would recommend [VSCode](https://code.visualstudio.com)
+1. A Text Editor installed. I would recommend [VSCode](https://code.visualstudio.com). If you do use VSCode, you should be prompted to install a handful of extensions the first time you open this project (if you don't already have them). Please do so, as they will be helpful for working with this code.
 2. A node installation of `v16`. If you are using [nvm](https://github.com/nvm-sh/nvm), please run `nvm use` in this projects root, to automatically use a compatible version.
 
 ## Getting Started
