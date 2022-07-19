@@ -40,6 +40,20 @@ This project is a simple vanilla javascript app, built and bundled with vite. Th
 
 This repo is written in TypeScript, but for the purposes of the workshop we wont be writing any Typescript-specific syntax so don't worry if you aren't experienced with it. Typescript should only tell you when there are potential issues in the code, and hopefully won't get in the way too much. If it does, just let me know :)
 
+## Resources
+
+Some of my fave resources if anyone is interested in learning more about creative coding:
+
+-   [The Book of Shaders](https://thebookofshaders.com/)
+-   [The Coding Train](https://www.youtube.com/user/shiffman)
+-   [Sebastian Lague](https://www.youtube.com/channel/UCmtyQOKKmrMVaKuRXz02jbQ)
+-   [Jamie Wong](http://jamie-wong.com/)
+-   [Three.js Fundamentals](https://threejsfundamentals.org/)
+-   [WebGL Fundamentals](https://webglfundamentals.org/) / [WebGL2 Fundamentals](https://webgl2fundamentals.org/)
+-   [Inigo Quilez's blog](https://iquilezles.org/)
+-   [Electric Square's Raymarching workshop](https://github.com/electricsquare/raymarching-workshop)
+-   [Luigi De Rosa's list of case studies on WebGL and creative code](https://github.com/luruke/awesome-casestudy)
+
 ## License
 
 This repo is [MIT Licensed](https://github.com/neefrehman/bdf-workshop-chaos-code/blob/main/LICENSE).
